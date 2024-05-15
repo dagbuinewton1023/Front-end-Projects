@@ -1,0 +1,196 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Manrope", sans-serif;
+}
+body {
+  height: 100vh;
+  width: 100%;
+}
+.main--1 {
+  width: 100%;
+  height: 100vh;
+  transition: 1.5s ease-out;
+  position: absolute;
+  overflow: hidden;
+
+  background-image: url(./pictures/pppp.jpg);
+  background-position: center;
+  background-size: cover;
+}
+.form {
+  width: 30rem;
+  height: 15rem;
+  background-color: rgba(255, 255, 255, 0.11);
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 20px;
+  border: 1px solid rgba(0, 0, 0, 0.146);
+  backdrop-filter: blur(5px);
+  border-left: 6px solid #5b5f97;
+  border-right: 6px solid #5b5f97;
+  border-top: 2px solid #5b5f97;
+  border-bottom: 2px solid #5b5f97;
+}
+.form h2 {
+  margin: 2.5rem 0 0.5rem 0;
+  font-size: 2em;
+  letter-spacing: 0.2rem;
+  text-shadow: 0 4px 5px rgba(255, 255, 255, 0.594);
+  color: #30346c;
+}
+.form .inputs {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem 3rem;
+}
+.form .inputs .input--field {
+  height: 3rem;
+  width: 90%;
+  margin-bottom: 1rem;
+  outline: none;
+  border: none;
+  border-radius: 10px;
+  font-size: 1.15rem;
+  padding: 0 0 0 30px;
+  letter-spacing: 0.1rem;
+  color: #5b5f97;
+  transition: 0.6s;
+  border-top: 1px solid rgba(158, 157, 157, 0.347);
+}
+input::placeholder {
+  color: #5b5f97;
+}
+
+input:focus ~ .icon {
+  color: white;
+  background-color: #5b5f97;
+}
+.form .inputs .submit--button {
+  width: 50%;
+  height: 2.5rem;
+  font-size: 1.25rem;
+  outline: none;
+  border: none;
+  border-radius: 10px;
+  color: black;
+  cursor: pointer;
+  z-index: 10;
+  position: relative;
+  transition: 0.6s;
+  color: #5b5f97;
+  background-color: white;
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.646);
+  border-top: 1px solid rgba(158, 157, 157, 0.347);
+  z-index: 5;
+}
+.form button:hover {
+  color: white;
+  background-color: #5b5f97;
+}
+.submit--button:active {
+  transform: translateY(7px);
+}
+.form input {
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.646);
+}
+.icon {
+  position: absolute;
+  left: 72.5%;
+  top: 42.5%;
+  font-size: 1.5rem;
+  color: #5b5f97;
+  border-radius: 3px 10px 10px 3px;
+  text-align: center;
+  padding: 10.5px 20px;
+}
+.boss {
+  background-color: #474b87;
+  width: 20rem;
+  margin: 1rem;
+  padding: 1rem;
+  border-radius: 10px;
+  position: relative;
+  transform: 1s;
+  z-index: 10;
+}
+.boss span {
+  background-color: azure;
+  padding: 2px 5px;
+  border-radius: 5px;
+  font-size: 0.8em;
+  font-weight: bold;
+  color: rgba(0, 0, 0, 0.861);
+  text-align: center;
+}
+.boss .comment {
+  text-align: right;
+  font-size: 0.9em;
+  margin-top: 15px;
+  border-radius: 10px;
+  padding: 5px 10px;
+  background-color: azure;
+}
+.boss i {
+  color: #5b5f97;
+  font-size: 1.3em;
+}
+.comments {
+  position: absolute;
+  right: 0%;
+  top: 0%;
+}
+.hidden--comment {
+  display: none;
+}
+.in--comming-text {
+  position: absolute;
+  right: 2%;
+  top: 2%;
+  color: white;
+  font-style: italic;
+  font-size: 1.3em;
+  z-index: 10;
+}
+.logging-out-text {
+  position: absolute;
+  right: 2%;
+  top: 2%;
+  color: white;
+  font-style: italic;
+  font-size: 1.3em;
+  z-index: 10;
+}
+.logging-out-text span {
+  color: black;
+}
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(184, 184, 209, 0.263);
+  backdrop-filter: blur(5px);
+}
+
+.copyright {
+  position: absolute;
+  top: 94.5%;
+  left: 45%;
+  color: white;
+  font-size: 0.8em;
+}
+
+.slides img {
+  width: 100%;
+  height: fit-content;
+}
