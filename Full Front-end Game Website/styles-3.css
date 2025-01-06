@@ -7,8 +7,7 @@
   flex-direction: column;
   justify-content: flex-end;
   align-items: center;
-  border-top: 1px solid rgba(0, 0, 0, 0.422);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.422);
+  margin-bottom: 10vh;
 }
 .main-body-part-1,
 .main-body-part-2 {
@@ -255,6 +254,13 @@
   box-shadow: 0 0 3px black;
   color: black;
 }
+
+.alternatives span{
+  text-align: center;
+  width: auto;
+  padding: 10px;
+  margin-left: 50px;
+}
 .synonym,
 .antonym {
   padding-left: 20px;
@@ -279,12 +285,14 @@
   background-color: blueviolet;
   border-radius: 5px 5px 50% 20%;
   margin-right: 10px;
-  margin-top: -4px;
   padding: 5px 20px 5px 0;
   font-size: 1.1em;
   font-weight: bold;
   color: white;
   text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .count-down-tag,
 .count-down-time {
@@ -294,15 +302,17 @@
 }
 
 .count-down-tag {
-  font-size: 1.3em;
+  font-size: 1.2em;
   background-color: chocolate;
   padding: 5px 10px;
   border-radius: 10px;
-  box-shadow: 0 4px 5px black;
+  text-align: center;
   color: white;
+  border: 2px solid rgb(255, 255, 255);
 }
 .count-down-time {
   font-size: 5em;
+  margin-top: 20px;
 }
 .count-down-time-ending {
   color: white;
@@ -416,13 +426,12 @@
 }
 
 .select-game-notification {
-  position: fixed;
+  position: absolute;
   width: auto;
   height: auto;
   background-color: rgba(255, 255, 255, 0.349);
   top: 12%;
-  right: -8%;
-  transform: translate(-83%);
+  right: 8%;
   border-radius: 20px;
   box-shadow: 0 4px 5px black;
   border-top: 1px solid rgba(0, 0, 0, 0.247);
@@ -516,6 +525,9 @@
   background-color: white;
   box-shadow: 0 5px 5px rgba(0, 0, 0, 0.703);
 }
+
+
+
 .main-body-5-content {
   position: absolute;
   top: 10%;
@@ -852,7 +864,7 @@
   text-align: center;
   text-transform: uppercase;
   background-color: darkcyan;
-  color: white;
+  color: rgb(0, 0, 0);
   padding: 5px;
   border-radius: 10px;
   margin: 0 10px;
