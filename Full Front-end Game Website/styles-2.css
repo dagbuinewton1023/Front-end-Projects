@@ -12,13 +12,13 @@
   justify-content: space-between;
   align-items: center;
   width: 100%;
+  height: 12.5vh;
   background-color: white;
   border-bottom: 1px solid #5b5f97;
-  border-radius: 0 0 10px 10px;
-  box-shadow: 0 4px 5px rgba(0, 0, 0, 0.644);
+  box-shadow: 0 4px 5px rgba(0, 0, 0, 0.24);
   transition: 0.5s;
   /* position: fixed;
-    z-index: 5; */
+  z-index: 5; */
 }
 
 .header-container h2 {
@@ -53,6 +53,8 @@ nav button:active {
   transform: translateY(5px);
 }
 
+.modal--About-panda
+
 .modal-title {
   display: flex;
   justify-content: space-between;
@@ -68,10 +70,9 @@ nav button:active {
   left: 50%;
   transform: translateX(-50%) translateY(-60%);
   padding: 10px;
-  width: 70%;
-  height: 27rem;
+  width: 50%;
+  height: auto;
   border-radius: 10px;
-  width: 60%;
   z-index: 10;
 }
 
@@ -111,7 +112,7 @@ nav button:active {
   height: 80%;
   text-align: center;
   line-height: 2em;
-  background-image: url(./pictures/4.jpg);
+  background-image: url(../Projects/4.jpg);
   background-position: top;
   background-size: cover;
   background-color: rgba(1, 1, 1, 0.525);
@@ -160,25 +161,38 @@ nav button:active {
 }
 
 .slide {
-  margin: 0 1%;
   height: 68vh;
   width: 98%;
   position: absolute;
   border-radius: 5px;
   transition: 1s all;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-.slide-1 {
-  background-color: #efa107;
+
+.slide img{
+  width: 100%;
+  height: auto;
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
 }
-.slide-2 {
-  background-color: #a7ace1;
+
+.slide video{
+  width: 100%;
+  height: 100%;
 }
-.slide-3 {
-  background-color: #5b5f97;
+
+.slides {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
 }
-.slide-4 {
-  background-color: cadetblue;
+.slide {
+  min-width: 100%;
+  overflow: hidden;
 }
+
 .dots {
   height: 5vh;
   width: 30%;
@@ -204,6 +218,15 @@ nav button:active {
   padding: 0 3rem;
 }
 
+.main--2-body{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f72323;
+  width: 100%;
+  height: auto;
+}
+
 .btns .left--btn,
 .btns .right--btn {
   padding: 10px;
@@ -227,12 +250,11 @@ nav button:active {
 }
 
 .game-instructions {
-  height: 100vh;
-  background-color: white;
+  height: auto;
+  background-color: rgb(255, 255, 255);
   width: 100%;
-  padding: 23vh 10% 7vh 10%;
-  border-top: 1px solid rgba(0, 0, 0, 0.356);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.356);
+  padding: 10%;
+
 }
 
 .dots .dot {
@@ -241,10 +263,10 @@ nav button:active {
   background-color: white;
   border-radius: 10px;
   /* position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    top: 50%;
-    transform: translateY(-50%); */
+  left: 50%;
+  transform: translateX(-50%);
+  top: 50%;
+  transform: translateY(-50%); */
   margin: 0 5px;
   cursor: pointer;
   transition: 0.5s;
@@ -260,7 +282,8 @@ nav button:active {
 
 .main--content {
   background-color: rgba(250, 235, 215, 0.315);
-  height: 70vh;
+  height: auto;
+  width: 100%;
   border-radius: 10px;
   box-shadow: 0 5px 5px rgba(0, 0, 0, 0.509);
 }
@@ -269,8 +292,9 @@ nav button:active {
   width: 100%;
   background-color: #a1a8f2;
   display: flex;
+  height: auto;
   justify-content: space-evenly;
-  padding: 20px 0;
+  padding: 50px 0;
   border-radius: 10px 10px 0 0;
 }
 .instruction--btn {
@@ -315,6 +339,7 @@ nav button:active {
   display: flex;
   align-items: center;
   justify-content: center;
+  
 }
 .Instruction--1 {
   padding: 5rem;
@@ -400,7 +425,7 @@ nav button:active {
 }
 
 .instruction--notification {
-  width: 30%;
+  width: 25%;
   height: auto;
   background-color: #a7ace195;
   backdrop-filter: blur(2px);
@@ -410,14 +435,19 @@ nav button:active {
   transform: translateX(-35%, -70vh);
   border-radius: 20px;
   box-shadow: 0 5px 5px rgba(0, 0, 0, 0.671);
-  padding: 20px 10px;
+  padding: 10px;
   transition: 3s;
-  z-index: 100;
+  z-index: 100;;
+  display: flex;
+  align-items: center;
+  height: 15vh;
+  justify-content: center;
+  flex-direction: column;
 }
 .instruction--notification .boss--panda {
   background-color: white;
   backdrop-filter: blur(5px);
-  padding: 5px 10px;
+  padding: 10px;
   border-radius: 5px;
   font-size: 0.9em;
   color: #474b82;
@@ -429,6 +459,7 @@ nav button:active {
   padding: 5px 5px;
   text-align: center;
   border-radius: 5px;
+  width: 80%;
   margin-top: 20px;
   font-size: 0.9em;
   color: #474b82;
@@ -479,7 +510,7 @@ nav button:active {
   background-color: transparent;
   backdrop-filter: blur(4px);
   position: fixed;
-  top: -20%;
+  top: -50%;
   left: 50%;
   transform: translate(-50%, -50%);
   border-radius: 20px;
@@ -537,7 +568,6 @@ nav button:active {
 }
 .login--notification-animation {
   position: absolute;
-  transform: translate(-50%, 130%);
 }
 
 .main--2-headerPage {
@@ -550,13 +580,19 @@ nav button:active {
   height: 100vh;
 }
 
+
+.main--3-body{
+  width: 100%;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  margin-bottom: 20vh;
+}
 .games {
   width: 90%;
   height: 80vh;
-  position: relative;
-  top: 56%;
-  left: 50%;
-  transform: translate(-50%, -50%);
   background-color: antiquewhite;
   border-radius: 50% 50% 10px 10px;
   box-shadow: 0 5px 5px rgba(0, 0, 0, 0.744);
@@ -574,7 +610,6 @@ nav button:active {
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  border-top: 2px solid black;
 }
 .game-section-part-1 {
   width: 50%;
@@ -582,10 +617,11 @@ nav button:active {
   background-color: rgb(245, 244, 244);
   border-radius: 50px;
   margin-top: 50px;
-  border-left: 3px solid black;
+  /* border-left: 3px solid black;
   border-right: 3px solid black;
   border-top: 1px solid black;
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid black; */
+  border: 1px solid black;
 }
 .game-section-part-2 {
   width: 100%;
@@ -669,12 +705,13 @@ nav button:active {
   justify-content: space-between;
   align-items: center;
   font-weight: bold;
-  background-color: #efa2077a;
+  background-color: rgb(229, 192, 143);
   width: 90%;
   margin-bottom: 5px;
   font-size: 1em;
   padding: 5px 15px;
   border-radius: 20px;
+  border: 2px solid black;
 }
 
 .game-section-part-1 .scores {
@@ -696,17 +733,19 @@ nav button:active {
 .hidden-guess {
   width: 30%;
   height: 45%;
-  background-color: #efa2077a;
+  background-color: rgb(229, 192, 143);
   border-radius: 20px;
   display: flex;
   justify-content: center;
   align-items: center;
   font-size: 4em;
+  margin-top: 20px;
+  border: 2px solid black;
 }
 .game-section-1 .timer {
   font-size: 4em;
   font-weight: bold;
-  margin-left: -35px;
+  margin-left: -10px;
   transition: 0.5;
 }
 
@@ -731,6 +770,7 @@ nav button:active {
   font-weight: bold;
   transition: 1s;
   box-shadow: 0 3px 5px black;
+  
 }
 
 .game-section-2 input {
@@ -772,8 +812,9 @@ nav button:active {
   width: 50%;
   text-align: center;
   text-transform: uppercase;
-  font-size: 1em;
   margin-top: 20px;
+  font-size: 1.1em;
+  font-weight: bold;
 }
 
 .ques span {
@@ -863,7 +904,7 @@ nav button:active {
 .summary--notification .part2 {
   height: 20vh;
   width: 100%;
-  background-color: rgba(255, 255, 255, 0.397);
+  background-color: rgba(255, 255, 255, 0.767);
   backdrop-filter: blur(100px);
   display: flex;
   flex-direction: column;
