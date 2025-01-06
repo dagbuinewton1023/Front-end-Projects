@@ -277,6 +277,79 @@ instructionBtnContainer.addEventListener("click", function (e) {
     .classList.remove("Instruction--message-inactive");
 });
 
+
+// // Implementing a slider
+// const slidesContainer = document.querySelector(".slides");
+// const slides = document.querySelectorAll(".slide");
+// const rightBtn = document.querySelector(".right--btn");
+// const leftBtn = document.querySelector(".left--btn");
+
+// // Implementing dots on slider
+// const dotsContainer = document.querySelector(".dots");
+// const createDots = function () {
+//   slides.forEach((_, i) =>
+//     dotsContainer.insertAdjacentHTML(
+//       "beforeend",
+//       `<div class="dot" data-slide=${i}></div>`
+//     )
+//   );
+// };
+// createDots(); // creates the dots based on the number of slides
+
+// const activeDot = function (slide) {
+//   document
+//     .querySelectorAll(".dot")
+//     .forEach((d) => d.classList.remove("dot--active"));
+
+//   document
+//     .querySelector(`.dot[data-slide="${slide}"]`)
+//     .classList.add("dot--active");
+// };
+// activeDot(0); // activates the dots based on the number of slides
+
+// let currentSlide = 0;
+// const maxSlides = slides.length;
+// const goToSlide = function (currentSlide) {
+//   slides.forEach((slide, index) => {
+//     slide.style.transform = `translateX(${105 * (index - currentSlide)}%)`;
+//   });
+// };
+
+// const nextSlide = function () {
+//   if (currentSlide === maxSlides - 1) {
+//     currentSlide = 0;
+//   } else {
+//     currentSlide++;
+//   }
+//   goToSlide(currentSlide);
+//   activeDot(currentSlide);
+// };
+// rightBtn.addEventListener("click", nextSlide);
+
+// const previousSlide = function () {
+//   if (currentSlide === 0) {
+//     currentSlide = maxSlides - 1;
+//   } else {
+//     currentSlide--;
+//   }
+//   goToSlide(currentSlide);
+//   activeDot(currentSlide);
+// };
+// leftBtn.addEventListener("click", previousSlide);
+
+// // clicking the dots change slides
+// dotsContainer.addEventListener("click", function (e) {
+//   if (e.target.classList.contains("dot")) {
+//     const slide = parseInt(e.target.dataset.slide, 10); // Ensure the slide is a number
+//     currentSlide = slide; // Update the currentSlide to the clicked dot's slide number
+//     goToSlide(currentSlide);
+//     activeDot(currentSlide);
+//   }
+// });
+
+// // Initialize the slider
+// goToSlide(0);
+
 // Implementing a slider
 const slidesContainer = document.querySelector(".slides");
 const slides = document.querySelectorAll(".slide");
@@ -308,9 +381,29 @@ activeDot(0); // activates the dots based on the number of slides
 
 let currentSlide = 0;
 const maxSlides = slides.length;
+
 const goToSlide = function (currentSlide) {
   slides.forEach((slide, index) => {
     slide.style.transform = `translateX(${105 * (index - currentSlide)}%)`;
+  });
+
+  // Manage videos: Play current slide's video, pause others
+  slides.forEach((slide, index) => {
+    const video = slide.querySelector("video");
+    if (video) {
+      if (index === currentSlide) {
+        video.play();
+
+        // Add an event listener to loop the video
+        video.addEventListener("ended", function () {
+          video.currentTime = 0; // Reset video playback position
+          video.play(); // Play the video again
+        });
+      } else {
+        video.pause();
+        video.currentTime = 0; // Reset video playback position
+      }
+    }
   });
 };
 
@@ -339,11 +432,17 @@ leftBtn.addEventListener("click", previousSlide);
 // clicking the dots change slides
 dotsContainer.addEventListener("click", function (e) {
   if (e.target.classList.contains("dot")) {
-    const slide = e.target.dataset.slide;
-    goToSlide(slide);
-    activeDot(slide);
+    const slide = parseInt(e.target.dataset.slide, 10); // Ensure the slide is a number
+    currentSlide = slide; // Update the currentSlide to the clicked dot's slide number
+    goToSlide(currentSlide);
+    activeDot(currentSlide);
   }
 });
+
+// Initialize the slider
+goToSlide(0);
+
+
 
 // Adding some notifications to the Instructions page
 const pandaTextGame = document.querySelector(".boss--panda-text");
@@ -380,45 +479,10 @@ document
   .querySelector(".main--content")
   .addEventListener("click", gameNotificationDisplay);
 
-// moving the header on scrolling
-// const headerSliderPage = document.querySelector(".main--2-headerPage");
-// const hh = document.querySelector(".header").getBoundingClientRect().height;
-// console.log(hh);
-// const stickyHeader = function (entries) {
-//   const [entry] = entries;
 
-//   if (!entry.isIntersecting) {
-//     header.classList.add("sticky--header");
-//   } else {
-//     header.classList.remove("sticky--header");
-//   }
-// };
 
-// const headerObserver = new IntersectionObserver(stickyHeader, {
-//   root: null,
-//   threshold: 0,
-//   rootMargin: `-${hh}px`,
-// });
-// headerObserver.observe(headerSliderPage);
+  
 
-const hhh = gameInstructionsPage.getBoundingClientRect();
-window.addEventListener("scroll", function (e) {
-  if (window.scrollY >= 608) {
-    header.classList.add("sticky--header");
-  } else {
-    header.classList.remove("sticky--header");
-  }
-});
-
-// const initialS1Coordinates = section1.getBoundingClientRect();
-
-// window.addEventListener("scroll", function () {
-//   if (window.scrollY > initialS1Coordinates.top) {
-//     nav.classList.add("sticky");
-//   } else {
-//     nav.classList.remove("sticky");
-//   }
-// });
 
 //////////////////////////////////////////////////////////////
 // WORKING ON GUESS THE NUMBER GAME
