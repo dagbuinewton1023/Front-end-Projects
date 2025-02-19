@@ -564,7 +564,7 @@ nav button:active {
 }
 .welcome--notification-animation {
   position: absolute;
-  transform: translate(-50%, 160%);
+  transform: translate(-50%, 180%);
 }
 .login--notification-animation {
   position: absolute;
